@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <Grid>
           <Row className="show-grid">
-            <Col xs={12} md={12}>
+            <Col xs={12}>
               <div className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <h2>Welcome to my React-App</h2>
@@ -38,7 +38,7 @@ class App extends Component {
           </Row>
 
           <Row>
-            <Col xs={12} md={12}>
+            <Col xs={12}>
               <Footer/>
             </Col>
           </Row>

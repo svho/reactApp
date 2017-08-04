@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { H1, FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap';
+import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap';
 
 // not working yet
 class InputForm extends Component {
@@ -41,7 +41,7 @@ constructor(props){
             controlId="formBasicText"
             validationState={this.getValidationState()}
           >
-            <ControlLabel>(Not yet) Working example with validation</ControlLabel>
+            <ControlLabel>(not yet) working input form with validation</ControlLabel>
             <FormControl
               type="text"
               value={this.state.value}
