@@ -4,21 +4,14 @@ import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap
 // not working yet
 class InputForm extends Component {
 
-constructor(props){
-  super(props);
-  this.state = this.getInitialState();
-}
-
-  getInitialState() {
-    return {
-      value: ''
-    };
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
   }
 
-/* function is from me
-  setState(state){
-    this.state = state;
-  }*/
+  getInitialState(){
+    return({ value: '' });
+  }
 
   getValidationState() {
     const length = this.state.value.length;
@@ -28,8 +21,7 @@ constructor(props){
   }
 
   handleChange(e) {
-
-    this.setState({ value: e.target.value }); // function call was already like this
+    this.setState({ value: e.target.value });
   }
 
   render() {
@@ -41,12 +33,12 @@ constructor(props){
             controlId="formBasicText"
             validationState={this.getValidationState()}
           >
-            <ControlLabel>(not yet) working input form with validation</ControlLabel>
+            <ControlLabel>now finally working input form with validation</ControlLabel>
             <FormControl
               type="text"
               value={this.state.value}
               placeholder="Enter text"
-              onChange={this.handleChange}
+              onChange={this.handleChange.bind(this)}
             />
             <FormControl.Feedback />
             <HelpBlock>Validation is based on string length.</HelpBlock>
