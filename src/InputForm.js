@@ -20,7 +20,13 @@ class InputForm extends Component {
     else if (length > 0) return 'error';
   }
 
+// can only be called with bind(this)
   handleChange(e) {
+    this.setState({ value: e.target.value });
+  }
+
+// can be called without bind(this)
+  handleChange2 = (e) => {
     this.setState({ value: e.target.value });
   }
 
@@ -38,7 +44,7 @@ class InputForm extends Component {
               type="text"
               value={this.state.value}
               placeholder="Enter text"
-              onChange={this.handleChange.bind(this)}
+              onChange={this.handleChange2} //{this.handleChange.bind(this)}
             />
             <FormControl.Feedback />
             <HelpBlock>Validation is based on string length.</HelpBlock>
