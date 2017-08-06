@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { FormGroup, ControlLabel, FormControl, HelpBlock } from 'react-bootstrap';
+import util from 'util'; // some useful functions like inspect() or format()
 
 // not working yet
 class InputForm extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = { value: '' , buttonClicked: 0};
+    console.log(util.inspect(props));
   }
 
   getInitialState(){
@@ -30,10 +32,15 @@ class InputForm extends Component {
     this.setState({ value: e.target.value });
   }
 
+  increaseClickCounter = () => {
+    this.setState({buttonClicked: this.state.buttonClicked+1})
+  }
+
   render() {
     return (
       <div>
         <h1>I already made an input form</h1>
+        <h2>{this.props.myProp}</h2>
         <form>
           <FormGroup
             controlId="formBasicText"
@@ -46,10 +53,13 @@ class InputForm extends Component {
               placeholder="Enter text"
               onChange={this.handleChange2} //{this.handleChange.bind(this)}
             />
-            <FormControl.Feedback />
+            <FormControl.Feedback/>
             <HelpBlock>Validation is based on string length.</HelpBlock>
           </FormGroup>
         </form>
+        <div>
+          <button onClick={this.increaseClickCounter}>increase button clicked</button>
+        </div>
       </div>
     );
   }

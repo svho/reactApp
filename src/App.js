@@ -21,7 +21,7 @@ class App extends Component {
 
           <Row>
             <Col xs={6}>
-              <InputForm/>
+              <InputForm myProp='das ist eine property'/>
             </Col>
             <Col xs={6}>
               <h2>... and some buttons</h2>
